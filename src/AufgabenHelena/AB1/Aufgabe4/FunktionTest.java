@@ -1,4 +1,4 @@
-package AufgabenHelena.Aufgabe3;
+package AufgabenHelena.AB1.Aufgabe4;
 
 public class FunktionTest {
     public static void main(String[] args) {

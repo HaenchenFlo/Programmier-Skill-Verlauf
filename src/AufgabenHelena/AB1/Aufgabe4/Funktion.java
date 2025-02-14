@@ -1,4 +1,4 @@
-package AufgabenHelena.Aufgabe3;
+package AufgabenHelena.AB1.Aufgabe4;
 
 public class Funktion {
     public static int f(int x) {
