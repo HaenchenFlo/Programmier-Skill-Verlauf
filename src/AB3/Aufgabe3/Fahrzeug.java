@@ -58,20 +58,21 @@ public class Fahrzeug {
     //methoden
 
     public double rechnung(int mietdauer, double gefahreneKm) {
-        double gesamtPreis = mietdauer * tagesPreis + gefahreneKm * kmPreis;
+        double gesamtPreis = mietdauer * tagesPreis + gefahreneKm * kmPreis + versGeb;
 
         gesamtEinnahmen += gesamtPreis;
 
         System.out.println("Rechnung für das Fahrzeug: " + kennzeichen);
         System.out.println("Mietdauer: " + mietdauer + " Tage");
         System.out.println("Gefahrene Kilometer: " + gefahreneKm + " km");
-        System.out.println("Gesamtpreis: " + gesamtPreis + " €");
+        System.out.println("Versicherungskosten: " + versGeb + " €");
+        System.out.println("Der Gesamtpreis ist: " + gesamtPreis + "€");
 
         return gesamtPreis;
     }
 
     public String toString() {
-        return "Fahrzeug [kennzeichen=" + kennzeichen + ", tagesPreis=" + tagesPreis + ", kmPreis=" + kmPreis + "Versicherungsgebühr =" + versGeb + "]";
+        return "Fahrzeug [kennzeichen=" + kennzeichen + ", tagesPreis=" + tagesPreis + ", kmPreis=" + kmPreis + " ,Versicherungsgebühr =" + versGeb + "]";
     }
 
 
