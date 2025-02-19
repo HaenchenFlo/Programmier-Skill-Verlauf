@@ -57,5 +57,15 @@ public class RaumTest {
         System.out.println(Raum.getfreieRaeume());
         System.out.println();
         System.out.println("Die Auslastungsquote liegt bei: " + String.format("%.1f", Raum.getAuslastungsQuote()) + "%");
+
+        raum1.freigeben();
+        raum2.freigeben();
+        raum3.freigeben();
+        raum4.freigeben();
+        System.out.println();
+
+        System.out.println("Anzahl an freien Raeumen: " + Raum.getfreieRaeume());
+        System.out.println("Die Auslastungsquote liegt bei: " + String.format("%.1f", Raum.getAuslastungsQuote()) + "%");
+
     }
 }
