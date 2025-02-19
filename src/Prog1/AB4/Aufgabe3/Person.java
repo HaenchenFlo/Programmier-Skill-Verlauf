@@ -1,8 +1,7 @@
 package Prog1.AB4.Aufgabe3;
-
 public class Person {
 
-    private String name;
+    private final String name;
 
     public Person(String name) {
         this.name = name;
@@ -14,7 +13,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" + "name='" + name + '\'' + '}';
+        return "Person{" + "Name='" + name + '\'' + '}';
     }
 }
 
