@@ -3,10 +3,10 @@ package Prog1.AB4.Aufgabe3;
 
 public class Raum {
     //Statische Variablen
-    public static int zaehler = 100; //Raumnummer vergabe startet ab 100
-    public static int plaetzeInsgesamt = 0;
-    public static int plaetzeBelegt = 0;
-    public static int freieRaeume = 0;
+    private static int zaehler = 100; //Raumnummer vergabe startet ab 100
+    private static int plaetzeInsgesamt = 0;
+    private static int plaetzeBelegt = 0;
+    private static int freieRaeume = 0;
 
     public static int getfreieRaeume() {
         return freieRaeume;
@@ -18,10 +18,10 @@ public class Raum {
 
     //Instanzvariablen
 
-    public int raumNummer;
-    public int anzahlPlaetze;
-    public int belegtePlaetze;
-    public Person isGebucht;
+    private int raumNummer;
+    private int anzahlPlaetze;
+    private int belegtePlaetze;
+    private Person isGebucht;
 
     //Konstruktor
     public Raum(int anzahlPlaetze) {
