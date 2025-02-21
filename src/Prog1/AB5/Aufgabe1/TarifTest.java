@@ -11,6 +11,9 @@ public class TarifTest {
         System.out.println(f.rechnung());
         f.telefonieren(20);
         System.out.println(f.rechnung());
+        Tarif.setGrundGebuer(40);
+        f.telefonieren(20);
+        System.out.println(f.rechnung());
     }
 }
 
