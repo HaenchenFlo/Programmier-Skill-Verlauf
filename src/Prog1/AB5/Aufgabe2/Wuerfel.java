@@ -43,7 +43,7 @@ public class Wuerfel {
         }
 
 
-        if (paschS1 && paschS2) {
+        if (paschS1) {
             if(ergebnisS1 > ergebnisS2) {
                 System.out.println("(" + s1w.getWert() + "," + s1w1.getWert() + ")"
                         + " gewinnt gegen " + "(" + s2w.getWert() + "," + s2w1.getWert() + ")");
