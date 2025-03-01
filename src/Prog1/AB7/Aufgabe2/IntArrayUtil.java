@@ -57,10 +57,10 @@ public class IntArrayUtil {
     }
 
     public static boolean containsMultiple(int[] a) {
-
+        return false;
     }
 
     public static int pos(int[] a, int n) {
-
+        return -1;
     }
 }
