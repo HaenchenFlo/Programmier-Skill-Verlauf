@@ -17,10 +17,12 @@ public class Vektor2D extends Punkt2D implements Addierbar, Messbar {
     public Vektor2D(Punkt2D d) {
 
     }
-    // Hier noch den 4. Konstruktor hinzufügen !!!
-    /*public Vektor2D() {
 
-    }*/
+    public Vektor2D(Punkt2D e1, Punkt2D e2) {
+
+    }
+
+
 
     @Override
     public Addierbar add(Addierbar a) {

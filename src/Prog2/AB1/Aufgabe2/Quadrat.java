@@ -1,6 +1,21 @@
 package Prog2.AB1.Aufgabe2;
 
 public class Quadrat extends GeoObjekt2D {
+
+    public Punkt2D eckeLU() {
+
+    }
+
+    public Punkt2D eckeRO() {
+
+    }
+
+    public double kanten() {
+
+    }
+
+
+
     @Override
     public double umfang() {
         return 0;

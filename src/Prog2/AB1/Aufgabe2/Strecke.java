@@ -3,10 +3,13 @@ package Prog2.AB1.Aufgabe2;
 public class Strecke extends GeoObjekt implements Messbar {
 
 
+    public Punkt2D anfP() {
 
+    }
 
+    public Punkt2D endP() {
 
-
+    }
 
 
 

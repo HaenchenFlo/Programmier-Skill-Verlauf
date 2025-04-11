@@ -5,6 +5,12 @@ public class Kreis extends GeoObjekt2D {
 
     }
 
+    public double radius() {
+
+    }
+
+
+
     @Override
     public double umfang() {
 
