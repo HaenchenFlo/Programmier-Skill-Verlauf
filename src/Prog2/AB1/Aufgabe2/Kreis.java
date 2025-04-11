@@ -5,9 +5,14 @@ public class Kreis extends GeoObjekt2D {
     private Punkt2D mittelpunkt;
     private final double pi = Math.PI;
 
-    public Kreis(double radius, Punkt2D mittelpunkt) {
+    public Kreis(Punkt2D mittelpunkt, double radius) {
         this.radius = Math.abs(radius);
         this.mittelpunkt = mittelpunkt;
+    }
+
+    public Kreis() {
+        this.radius = 1;
+        this.mittelpunkt = new Punkt2D();
     }
 
     public Punkt2D mittelpunkt() {
@@ -31,17 +36,17 @@ public class Kreis extends GeoObjekt2D {
 
     @Override
     public void multiply(double d) {
-        radius = radius * d;
+        radius = Math.abs(radius * d);
     }
 
     @Override
     public void resize() {
-
+        this.radius = 1.0;
     }
 
     @Override
     public Punkt2D position() {
-        return mittelpunkt;
+        return mittelpunkt();
     }
 
     @Override

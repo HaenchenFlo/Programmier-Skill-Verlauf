@@ -1,4 +1,5 @@
 package Prog2.AB1.Aufgabe2;
+import java.util.Objects;
 
 /**
  * 
@@ -48,6 +49,19 @@ public class Punkt2D {
 	@Override
 	public String toString() {
 		return "(" + x + ", " + y + ")";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Punkt2D punkt2D = (Punkt2D) obj;
+		return Double.compare(punkt2D.x, x) == 0 &&
+				Double.compare(punkt2D.y, y) == 0;
 	}
 
 }
