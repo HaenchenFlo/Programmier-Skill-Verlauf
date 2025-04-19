@@ -11,11 +11,11 @@ public class PicknickKorb {
         this.weinFlaschen = weinFlaschen;
     }
 
-    public void setKaesePreis(double neuerPreis) {
+    public static void setKaesePreis(double neuerPreis) {
         kaesePreis = neuerPreis;
     }
 
-    public void setWeinPreis(double neuerPreis) {
+    public static void setWeinPreis(double neuerPreis) {
         weinPreis = neuerPreis;
     }
 

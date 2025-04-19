@@ -14,7 +14,8 @@ public class PicknickTest {
         System.out.println("Korb 3: " + korb3.berechneKorb() + " €");
 
         // Preis für Wein ändern
-        korb1.setWeinPreis(7.50);  // neue Preis für Wein (gilt für alle Körbe)
+        PicknickKorb.setWeinPreis(7.50);// neue Preis für Wein (gilt für alle Körbe)
+        PicknickKorb.setKaesePreis(20.5);
 
         // Preise für die Körbe nach Preisänderung berechnen und ausgeben
         System.out.println("\nPreise der Körbe (nach Preisänderung des Weins):");
