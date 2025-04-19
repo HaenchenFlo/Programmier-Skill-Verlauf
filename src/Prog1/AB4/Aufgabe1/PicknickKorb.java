@@ -19,11 +19,11 @@ public class PicknickKorb {
         weinPreis = neuerPreis;
     }
 
-    public double getKaesePreis() {
+    public static double getKaesePreis() {
         return kaesePreis;
     }
 
-    public double getWeinPreis() {
+    public static double getWeinPreis() {
         return weinPreis;
     }
 
