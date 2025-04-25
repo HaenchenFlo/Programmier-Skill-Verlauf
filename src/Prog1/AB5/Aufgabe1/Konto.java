@@ -27,7 +27,7 @@ public class Konto {
 
     public void einzahlen(double betrag) {
         if (betrag > 0) {
-            kontoStand += betrag;
+            kontoStand += betrag - gebuehr;
             gesamtGebueren += gebuehr;
             bewegungenGesamt++;
             if (letzteGebuehr == gebuehr) {
@@ -65,7 +65,7 @@ public class Konto {
             return;
         }
         this.abheben(betrag);
-        konto.einzahlen(betrag);
+        konto.einzahlen(betrag + gebuehr);
     }
 
     public String toString() {
