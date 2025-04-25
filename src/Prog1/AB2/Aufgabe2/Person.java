@@ -4,10 +4,10 @@ public class Person {
 
 	// Instanzattribute
 	
-	String name;
+	public String name;
 	
 	int gebJahr;	
-	
+
 	// Instanzmethoden
 	
 	// berechnet das Alter der Person im Jahr x
@@ -15,6 +15,10 @@ public class Person {
 		int a; 
 		a = x-gebJahr;
 		return a;
+	}
+
+	public String getName() {
+		return name;
 	}
 	
 	// ändert den Namen der Person

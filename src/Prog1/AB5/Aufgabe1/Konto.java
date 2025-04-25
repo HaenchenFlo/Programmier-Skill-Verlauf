@@ -1,43 +1,90 @@
 package Prog1.AB5.Aufgabe1;
 
+import Prog1.AB2.Aufgabe2.Person;
+
 public class Konto {
+    private Person kontoInhaber;
     private int kontoNummer;
-    private String name;
     private double kontoStand;
-    private int buchungen;
 
-    public Konto(String name, int kontonummer) {
-        this.kontoNummer = kontonummer;
-        this.name = name;
+    private static int letzteKonto = 1000;
+    private static double gebuehr = 0.12;
+    public static double gesamtGebueren = 0.0;
+
+    private int bewegungenGesamt = 0;
+    private int bewegungenMitAlterGebuehr = 0;
+    private double letzteGebuehr = gebuehr;
+
+    public Konto(Person kontoInhaber) {
+        this.kontoInhaber = kontoInhaber;
+        this.kontoNummer = letzteKonto++;
         this.kontoStand = 0.0;
-        this.buchungen = 0;
     }
 
-    public void setName(String neuerName) {
-        this.name = neuerName;
+    public static void setGebuehr(double neu) {
+        gebuehr = neu;
     }
 
-    public double getKontoStand() {
-        return kontoStand;
+    public void einzahlen(double betrag) {
+        if (betrag > 0) {
+            kontoStand += betrag;
+            gesamtGebueren += gebuehr;
+            bewegungenGesamt++;
+            if (letzteGebuehr == gebuehr) {
+                bewegungenMitAlterGebuehr++;
+            }
+        } else {
+            System.out.println("Negativer Betrag nicht möglich!");
+        }
     }
 
-    public int getBuchungen() {
-        return buchungen;
+    public void abheben(double betrag) {
+        if (betrag < 0) {
+            System.out.println("Negativer Betrag nicht möglich!");
+            return;
+        }
+        if (betrag + gebuehr > kontoStand) {
+            System.out.println("Auszahlung nicht möglich");
+            return;
+        }
+        kontoStand -= betrag + gebuehr;
+        gesamtGebueren += gebuehr;
+        bewegungenGesamt++;
+        if (letzteGebuehr == gebuehr) {
+            bewegungenMitAlterGebuehr++;
+        }
     }
 
-    public double einzahlen(double betrag) {
-        kontoStand += betrag;
-        buchungen++;
-        return kontoStand;
-    }
-
-    public double auszahlen(double betrag) {
-        kontoStand -= betrag;
-        buchungen++;
-        return kontoStand;
+    public void ueberweisen(Konto konto, double betrag) {
+        if (betrag < 0) {
+            System.out.println("Negativer Betrag nicht möglich!");
+            return;
+        }
+        if (betrag + gebuehr > this.kontoStand) {
+            System.out.println("Auszahlung nicht möglich");
+            return;
+        }
+        this.abheben(betrag);
+        konto.einzahlen(betrag);
     }
 
     public String toString() {
-        return "Name: " + name + ", Kontonummer: " + kontoNummer + ", Kontostand: " + kontoStand;
+        return "Name: " + kontoInhaber.getName() + ", Kontonummer: " + kontoNummer + ", Kontostand: " + kontoStand;
+    }
+
+    public void kontoauszug() {
+        System.out.println(toString());
+    }
+
+    public double abschlussRechnung() {
+        int bewegungenMitNeuerGebuehr = bewegungenGesamt - bewegungenMitAlterGebuehr;
+        double summe = (bewegungenMitAlterGebuehr * letzteGebuehr) + (bewegungenMitNeuerGebuehr * gebuehr);
+
+        bewegungenGesamt = 0;
+        bewegungenMitAlterGebuehr = 0;
+        letzteGebuehr = gebuehr;
+
+
+        return summe;
     }
 }
