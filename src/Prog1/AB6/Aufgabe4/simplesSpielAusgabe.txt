@@ -1,0 +1,43 @@
+C:\Users\stefa\.jdks\openjdk-23.0.2\bin\java.exe -Dvaadin.copilot.pluginDotFilePath=C:\Users\stefa\Desktop\code\UE\UebungenProgrammieren\.idea\.copilot-plugin "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2.2\lib\idea_rt.jar=56028" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\stefa\Desktop\code\UE\UebungenProgrammieren\out\production\UebungenProgrammieren;C:\Users\stefa\.m2\repository\junit\junit\4.13.1\junit-4.13.1.jar;C:\Users\stefa\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\stefa\.m2\repository\org\junit\jupiter\junit-jupiter\5.8.1\junit-jupiter-5.8.1.jar;C:\Users\stefa\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.1\junit-jupiter-api-5.8.1.jar;C:\Users\stefa\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\stefa\.m2\repository\org\junit\platform\junit-platform-commons\1.8.1\junit-platform-commons-1.8.1.jar;C:\Users\stefa\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\stefa\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.1\junit-jupiter-params-5.8.1.jar;C:\Users\stefa\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.1\junit-jupiter-engine-5.8.1.jar;C:\Users\stefa\.m2\repository\org\junit\platform\junit-platform-engine\1.8.1\junit-platform-engine-1.8.1.jar Prog1.AB6.Aufgabe4.SpielTest
+Gib deinen Namen ein: Florian
+Spieler Florian Wurfergebnis: 1, Spieler Computer Wurfergebnis : 4
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 6, Spieler Computer Wurfergebnis : 3
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 1, Spieler Computer Wurfergebnis : 6
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 2, Spieler Computer Wurfergebnis : 1
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 4, Spieler Computer Wurfergebnis : 3
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 3, Spieler Computer Wurfergebnis : 2
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 1, Spieler Computer Wurfergebnis : 3
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 3, Spieler Computer Wurfergebnis : 4
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 3, Spieler Computer Wurfergebnis : 4
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 2, Spieler Computer Wurfergebnis : 3
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 2, Spieler Computer Wurfergebnis : 1
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 6, Spieler Computer Wurfergebnis : 4
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 1, Spieler Computer Wurfergebnis : 4
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 4, Spieler Computer Wurfergebnis : 5
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 1, Spieler Computer Wurfergebnis : 4
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 1, Spieler Computer Wurfergebnis : 6
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 6, Spieler Computer Wurfergebnis : 4
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 2, Spieler Computer Wurfergebnis : 1
+Weiter? (j/n)j
+Spieler Florian Wurfergebnis: 5, Spieler Computer Wurfergebnis : 5
+Weiter? (j/n)n
+Spieler Florian Punktzahl: 8 ------ Spieler Computer Punktzahl: 10
+
+Process finished with exit code 0
