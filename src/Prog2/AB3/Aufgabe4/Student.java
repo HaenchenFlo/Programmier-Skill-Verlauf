@@ -1,8 +1,5 @@
 package Prog2.AB3.Aufgabe4;
 
-import Prog2.AB1.Aufgabe1.Stud;
-import Prog2.AB3.Aufgabe3.Menge;
-
 public class Student {
     private String name;
     private int matNr;
