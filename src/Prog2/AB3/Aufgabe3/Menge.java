@@ -1,7 +1,7 @@
 package Prog2.AB3.Aufgabe3;
 
 /**
- * 
+ *
  * @author fhaenc2s
  *
  * @param <T>

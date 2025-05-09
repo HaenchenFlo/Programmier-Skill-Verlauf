@@ -59,6 +59,7 @@ public class MengeDynArrayTest {
         assertEquals(10, menge.get()); // irgendein Element, meist das erste
     }
 
+
     @Test
     public void testIsEmpty() {
         assertFalse(menge.isEmpty());
