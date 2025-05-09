@@ -62,9 +62,7 @@ public class DynArray<T> {
 	}
 
 	private void decrease() {
-		// Wenn das Array nur zu einem Viertel oder weniger gefüllt ist und die Kapazität größer als die Startgröße
 		if (size <= array.length / 4 && array.length > startgroesse) {
-			// Die neue Kapazität ist die Hälfte der aktuellen Kapazität
 			int newCapacity = array.length / 2;
 
 			// Die Kapazität darf nicht unter der Startgröße fallen
