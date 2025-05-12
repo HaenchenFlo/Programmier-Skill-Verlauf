@@ -1,7 +1,5 @@
 package Prog1.AB6.Aufgabe4;
 
-import Prog1.AB5.Aufgabe4.Wuerfel;
-
 import java.util.Scanner;
 
 public class Spiel {
@@ -71,6 +69,44 @@ public class Spiel {
             System.out.println("Spieler " + sp1.getName() + " hat mit " + sp1.punkte() + " punkten gewonnen!");
         } else {
             System.out.println("Spieler " + sp2.getName() + " hat mit " + sp2.punkte() + " punkten gewonnen!");
+        }
+    }
+
+    public static void sechser(Spieler sp1, Spieler sp2) {
+        int versucheSp1 = 0;
+        int versucheSp2 = 0;
+        boolean sp1hatpasch = false;
+        boolean sp2hatpasch = false;
+
+        while(!sp1hatpasch) {
+            int w1 = sp1.wuerfeln();
+            int w2 = sp1.wuerfeln();
+            versucheSp1++;
+            if(w1 == 6 && w2 == 6) {
+                sp1.punktPlus(versucheSp1);
+                sp1hatpasch = true;
+            }
+        }
+
+        while(!sp2hatpasch) {
+            int w3 = sp2.wuerfeln();
+            int w4 = sp2.wuerfeln();
+            versucheSp2++;
+            if(w3 == 6 && w4 == 6) {
+                sp2.punktPlus(versucheSp2);
+                sp2hatpasch = true;
+            }
+        }
+
+        System.out.println(sp1.getName() + " hat den 6er-Pasch nach " + sp1.punkte() + " Versuchen.");
+        System.out.println(sp2.getName() + " hat den 6er-Pasch nach " + sp2.punkte() + " Versuchen.");
+
+        if(sp1.punkte() < sp2.punkte()) {
+            System.out.println("Spieler " + sp1.getName() + " hat mit " + sp1.punkte() + " punkten gewonnen!");
+        } else if(sp2.punkte() < sp1.punkte()) {
+            System.out.println("Spieler " + sp2.getName() + " hat mit " + sp2.punkte() + " punkten gewonnen!");
+        } else {
+            System.out.println("Unentschieden!");
         }
     }
 }
