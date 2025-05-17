@@ -8,11 +8,11 @@ public class LeastSquare {
             Punkt p = punkte[i];
             sumX += p.x;
             sumY += p.y;
-            sumXY = p.x * p.y;
-            sumX2 = p.x * p.x;
+            sumXY += p.x * p.y;
+            sumX2 += p.x * p.x;
         }
         double a = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
-        double b = (sumY - a * sumX) / n;
+        double b = (sumY * sumX2 - sumX * sumXY) / (n * sumX2 - sumX * sumX);
 
         return new double[]{a,b};
     }

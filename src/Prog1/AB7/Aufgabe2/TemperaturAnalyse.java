@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class TemperaturAnalyse {
     public static void main(String[] args) {
-        int[] jahre = {2,3,5,7,9};
-        double[] temperaturen = {4,5,7,10,15};
+        int[] jahre = {8,9,10,11,12,13,14,15};
+        double[] temperaturen = {19.4,19.2,21.8,17.3,18.7,20.5,20.6,20.6};
 
         Punkt[] daten = new Punkt[jahre.length];
         for (int i = 0; i < jahre.length; i++) {
@@ -14,6 +14,6 @@ public class TemperaturAnalyse {
 
         double[] ergebnis = LeastSquare.leastSquares(daten);
         System.out.println(Arrays.toString(daten));
-        System.out.printf("Ermittelte Gerade: y = %.4fx + %.4f\n", ergebnis[0], ergebnis[1]);
+        System.out.printf("Ermittelte Gerade: y = %.3fx + %.3f\n", ergebnis[0], ergebnis[1]);
     }
 }
