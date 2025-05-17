@@ -14,6 +14,6 @@ public class TemperaturAnalyse {
 
         double[] ergebnis = LeastSquare.leastSquares(daten);
         System.out.println(Arrays.toString(daten));
-        System.out.printf("Ermittelte Gerade: y = %.3fx + %.3f\n", ergebnis[0], ergebnis[1]);
+        System.out.printf("Ermittelte Gerade: y = %.4fx + %.4f\n", ergebnis[0], ergebnis[1]);
     }
 }
