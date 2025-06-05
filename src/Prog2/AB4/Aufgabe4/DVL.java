@@ -1,198 +1,168 @@
 package Prog2.AB4.Aufgabe4;
 
-import jdk.jshell.spi.SPIResolutionException;
-
 import java.util.NoSuchElementException;
 
 public class DVL<T> {
-    private ListenElement first;
-    private ListenElement last;
+
+
+    /* Innere Klassen */
+
+    class ListenElem {
+
+        /* Instanzvariablen */
+
+        ListenElem next;
+        T value;
+        ListenElem prev;
+
+        /* Konstruktoren */
+
+        public ListenElem(ListenElem next, T value, ListenElem prev) {
+            this.next = next;
+            this.value = value;
+            this.prev = prev;
+        }
+    }
+
+    /* Instanzvariablen */
+
+    private ListenElem first;
+    private ListenElem last;
     private int size;
 
-    protected class ListenElement {
-        private ListenElement prev;
-        private ListenElement next;
-        T value;
+    /* Instanzmethoden */
 
-        ListenElement(T v) {
-            value = v;
-            prev = null;
-            next = null;
-        }
+    public int size() {
+        return size;
     }
 
-    public DVL() {
-        this.first = null;
-        this.size = 0;
+    public boolean isEmpty() {
+        return size == 0;
     }
-
-    public int size() {return this.size;}
-
-    public boolean isEmpty() {return first == null;}
 
     public boolean contains(T v) {
-        ListenElement e = first;
-        while(e != null) {
-            if(e.value.equals(v)) {
-                return true;
-            }
-            e = e.next;
-        }
-        return false;
+        return getElem(v) != null;
     }
 
     public T get(int pos) {
-        if(pos < 0 || pos >= size) {
-            throw new IndexOutOfBoundsException("Ungültige Pos: " + pos);
-        }
-        ListenElement e = first;
-        for(int i = 0; i < pos; i++) {
-            e = e.next;
-        }
-
-        return e.value;
+        return getElem(pos).value;
     }
 
     public T getFirst() {
-        if(isEmpty()) {
-            throw new NoSuchElementException("Liste Leer");
-        }
+        if (isEmpty()) throw new NoSuchElementException();
         return first.value;
     }
 
     public T getLast() {
-        if(isEmpty()) {
-            throw new NoSuchElementException("Liste Leer");
-        }
+        if (isEmpty()) throw new NoSuchElementException();
         return last.value;
     }
 
     public void set(int pos, T v) {
-        if(pos < 0 || pos >= size) {
-            throw new IndexOutOfBoundsException("Ungültige Pos: " + pos);
-        }
-        ListenElement e = first;
-        for(int i = 0; i < pos; i++) {
-            e = e.next;
-        }
-        e.value = v;
+        getElem(pos).value = v;
     }
 
-
     public void insert(T v) {
-        ListenElement neu = new ListenElement(v);
-        neu.next = first;
-        if (first != null) {
-            first.prev = neu;
-        }
-        first = neu;
+        ListenElem e = new ListenElem(first, v, null);
+        if (isEmpty())
+            last = e;
+        else
+            first.prev = e;
+        first = e;
         size++;
     }
 
     public void append(T v) {
-        ListenElement neu = new ListenElement(v);
-        if (isEmpty()) {
-            first = neu;
-            last = neu;
-        } else {
-            last.next = neu;
-            neu.prev = last;
-            last = neu;
-        }
+        ListenElem e = new ListenElem(null, v, last);
+        if (isEmpty())
+            first = e;
+        else
+            last.next = e;
+        last = e;
         size++;
     }
 
     public void insert(int pos, T v) {
-        if(pos < 0 || pos >= size) {
-            throw new IndexOutOfBoundsException("Ungültige Pos: " + pos);
-        }
-        ListenElement neu = new ListenElement(v);
-
-        if(pos == 0) {
+        if (pos == 0)
             insert(v);
-        } else {
-            ListenElement e = first;
-            for(int i = 0; i < pos; i++) {
-                e = e.next;
-            }
-            neu.next = e.next;
-            neu.prev = e;
-
-            if(e.next != null) {
-                e.next.prev = neu;
-            }
-            e.next = e;
+        else if (pos == size)
+            append(v);
+        else {
+            ListenElem cursor = getElem(pos);
+            cursor.prev = new ListenElem(cursor, v, cursor.prev);
+            cursor.prev.prev.next = cursor.prev;
+            size++;
         }
-
-        size++;
     }
 
     public void remove(int pos) {
-        ListenElement e = first;
-        if(pos == 0) {
-            removeFirst();
-            return;
-        }
-        for(int i = 0; i < pos; i++) {
-            e = e.next;
-        }
-
-        if(e.prev != null) {
-            e.prev.next = e.next;
-        }
-        if(e.next != null) {
-            e.next.prev = e.prev;
-        }
-
-        if(e.next == null) {
-            last = e.prev;
-        }
-        size--;
+        delete(getElem(pos));
     }
 
     public void removeFirst() {
-        if (isEmpty())
-            return;
-
+        if (isEmpty()) throw new NoSuchElementException();
         first = first.next;
         size--;
+        if (isEmpty())
+            last = null;
+        else
+            first.prev = null;
     }
 
     public void removeLast() {
-        if (isEmpty())
-            return;
-
+        if (isEmpty()) throw new NoSuchElementException();
         last = last.prev;
         size--;
+        if (isEmpty())
+            first = null;
+        else
+            last.next = null;
     }
 
     public void delete(T v) {
-        if (isEmpty()) return;
-
-        ListenElement e = first;
-        while (e != null && !e.value.equals(v)) {
-            e = e.next;
-        }
-
-        // Element mit Wert v nicht gefunden
-        if (e == null) return;
-
-        // Element ist erstes
-        if (e == first) {
-            removeFirst();
-            return;
-        }
-
-        // Element ist letztes
-        if (e == last) {
-            removeLast();
-            return;
-        }
-
-        // Element ist irgendwo in der Mitte
-        e.prev.next = e.next;
-        e.next.prev = e.prev;
-        size--;
+        ListenElem e = getElem(v);
+        if (e == null) throw new NoSuchElementException();
+        delete(e);
     }
 
+    @Override
+    public String toString() {
+        String s = "{";
+        ListenElem cursor = first;
+        while (cursor != null) {
+            s += cursor.value;
+            if (cursor != last) s += ",";
+            cursor = cursor.next;
+        }
+        return s + "}";
+    }
+
+    private ListenElem getElem(T v) {
+        ListenElem cursor = first;
+        while (cursor != null) {
+            if (cursor.value.equals(v)) return cursor;
+            cursor = cursor.next;
+        }
+        return null;
+    }
+
+    private ListenElem getElem(int pos) {
+        if (pos < 0 || pos >= size) throw new IndexOutOfBoundsException();
+        ListenElem cursor = first;
+        for (int i = 0; i < pos; i++) cursor = cursor.next;
+        return cursor;
+    }
+
+    private void delete(ListenElem e) {
+        if (e == null) throw new IllegalArgumentException();
+        if (e == first)
+            removeFirst();
+        else if (e == last)
+            removeLast();
+        else {
+            e.prev.next = e.next;
+            e.next.prev = e.prev;
+            size--;
+        }
+    }
 }
