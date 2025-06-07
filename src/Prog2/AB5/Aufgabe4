@@ -1,0 +1,94 @@
+
+
+A)
+
+
+int[] arr = {1, 2, 3};
+for (int element : arr) {
+    element = 42;
+}
+❓Was passiert?
+Java kopiert bei jedem Schleifendurchlauf den Wert von arr[i] in die Variable element.
+
+element = 42 ändert nur die Kopie, nicht das Originalelement im Array.
+
+📌 Ergebnis:
+Das Array bleibt unverändert: arr = {1, 2, 3}.
+
+💡 Erklärung:
+Primitive Datentypen (wie int) werden per Wert übergeben.
+Die Schleifenvariable element ist also eine Kopie und keine Referenz auf das Array-Element.
+
+
+B)
+
+
+DynArray<Integer> arr = new DynArray<>();
+arr.add(1);
+arr.add(2);
+arr.add(3);
+
+for (Integer element : arr) {
+    element = 42;
+}
+❓Was passiert?
+Integer ist ein Wrapper-Typ und damit unveränderlich (immutable).
+
+Auch hier wird eine Kopie der Referenz auf das Objekt Integer übergeben.
+
+element = 42 weist die lokale Schleifenvariable auf ein neues Objekt
+– aber das hat keine Auswirkung auf das DynArray.
+
+📌 Ergebnis:
+Das DynArray bleibt ebenfalls unverändert: [1, 2, 3].
+
+💡 Erklärung:
+Selbst bei Objekten: Wenn du die Schleifenvariable neu zuweist (element = 42),
+änderst du nicht das, worauf das Originalarray zeigt – du ersetzt nur die lokale Referenz.
+
+
+
+
+C)
+
+
+DynArray<IntKiste> arr = new DynArray<>();
+arr.add(new IntKiste(1));
+arr.add(new IntKiste(2));
+arr.add(new IntKiste(3));
+
+for (IntKiste element : arr) {
+    element.set(42);
+}
+❓Was passiert?
+Hier wird eine Referenz auf das Objekt IntKiste übergeben.
+
+Mit element.set(42) veränderst du den Zustand des Objekts, auf das element zeigt.
+
+📌 Ergebnis:
+Alle Objekte im DynArray enthalten jetzt 42:
+[IntKiste(42), IntKiste(42), IntKiste(42)].
+
+💡 Erklärung:
+Objektreferenzen werden kopiert, aber die Objekte selbst bleiben dieselben.
+Wenn du set(...) aufrufst, änderst du das Objekt direkt.
+
+
+--TIPPS--
+
+
+✅ Vergleich: Was passiert in der for-each-Schleife wirklich?
+| Fall                 | Was wird verändert?               | Hat es Auswirkungen auf das Original? | Warum?                                                                                                          |
+| -------------------- | --------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `int[] arr`          | Nur eine **Kopie** des Wertes     | ❌ Nein                                | `int` ist ein einfacher Wert. Die Schleife arbeitet nur mit einer Kopie – das Original im Array bleibt gleich.  |
+| `DynArray<Integer>`  | Nur die **Referenz** wird kopiert | ❌ Nein                                | `Integer` ist ein Objekt, aber **unveränderbar** (immutable). Das neue `42` ersetzt nur die Kopie der Referenz. |
+| `DynArray<IntKiste>` | Die **Daten im Objekt** selbst    | ✅ Ja                                  | `IntKiste` ist veränderbar (mutable). Du greifst über die Referenz direkt auf das Objekt zu und änderst es.     |
+| -------------------- | --------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+
+
+🔍 Einfach erklärt:
+Bei Zahlen (int) wird nur eine Kopie gemacht → keine Änderung.
+
+Bei Objekten wie Integer wird auch nur eine Referenz kopiert → aber da Integer nicht veränderbar ist, passiert nichts.
+
+Bei Objekten wie IntKiste, die veränderbar sind, kannst du das echte Objekt ändern, weil du es über die Referenz erreichst.
