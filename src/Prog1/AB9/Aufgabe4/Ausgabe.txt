@@ -1,0 +1,18 @@
+Status: 
+Frodo ist 40 Jahre alt und hat eine Lebenserwartung von 150 Jahren.
+Bilbo ist 120 Jahre alt und hat eine Lebenserwartung von 150 Jahren.
+Gandalf ist 300 Jahre alt und hat eine unbegrenzte Lebenserwartung.
+
+Frodo wird verwundet. Die Lebenserwartung sinkt auf 140 Jahre.
+
+Bilbo wird tödlich verletzt.
+
+Frodo ist geheilt: Die Lebenserwartung ist 150 Jahre.
+
+Bei Bilbo ist keine Heilung mehr moeglich.
+
+Status: 
+Frodo ist 40 Jahre alt und hat eine Lebenserwartung von 150 Jahren.
+Bilbo ist bereits verstorben.
+Gandalf ist 300 Jahre alt und hat eine unbegrenzte Lebenserwartung.
+
