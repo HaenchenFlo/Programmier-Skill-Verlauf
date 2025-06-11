@@ -8,7 +8,8 @@ public class Dreieck extends GeoFigur{
     private Punkt b;
     private Punkt c;
 
-    public Dreieck(Punkt a, Punkt b, Punkt c) {
+    public Dreieck(Punkt a, Punkt b, Punkt c,String farbe) {
+        super(farbe);
         this.a = a;
         this.b = b;
         this.c = c;
