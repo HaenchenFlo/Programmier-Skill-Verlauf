@@ -1,5 +1,8 @@
 package Prog1.AB9.Aufgabe4;
 
+import Prog1.AB11.Aufgabe3.Gegenstand;
+import Prog1.AB11.Aufgabe3.Tragbar;
+
 public class Magier extends Wesen{
 
     public Magier(String name, int alter) {
@@ -14,6 +17,16 @@ public class Magier extends Wesen{
     @Override
     public String gruss() {
         return "Sei gegruesst!";
+    }
+
+    @Override
+    public void nehmen(Tragbar d) {
+        if (this.ding != null) {
+            System.out.println(name + " trägt bereits etwas.");
+            return;
+        }
+        this.ding = d;
+        System.out.println(name + " trägt jetzt " + ((Gegenstand) d).getBezeichnung());
     }
 
     public void heilt(Hobbit h) {
