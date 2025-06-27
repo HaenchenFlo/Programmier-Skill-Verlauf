@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class LottoSpiel {
     static Random r = new Random();
-    private ArrayMenge ziehung;
-    private ArrayMenge tipp;
+    private Menge ziehung;
+    private Menge tipp;
 
     public LottoSpiel() {
         ziehung = new ArrayMenge();
