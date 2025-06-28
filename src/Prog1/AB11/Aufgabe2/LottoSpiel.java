@@ -9,12 +9,12 @@ public class LottoSpiel {
     private Menge tipp;
 
     public LottoSpiel() {
-        ziehung = new ArrayMenge();
-        tipp = new ArrayMenge();
+        ziehung = new LottoMenge();
+        tipp = new LottoMenge();
     }
 
     public Menge ziehen() {
-        ziehung = new ArrayMenge();
+        ziehung = new LottoMenge();
         while (ziehung.size() < 6) {
             int zahl = r.nextInt(49) + 1;
             ziehung.insert(zahl);
@@ -22,14 +22,14 @@ public class LottoSpiel {
         return ziehung;
     }
     public void tippFix(int[] arr) {
-        tipp = new ArrayMenge();
+        tipp = new LottoMenge();
         for (int zahl : arr) {
             tipp.insert(zahl);
         }
     }
 
     public void tippZufall() {
-        tipp = new ArrayMenge();
+        tipp = new LottoMenge();
         while (tipp.size() < 6) {
             int zahl = r.nextInt(49) + 1;
             tipp.insert(zahl);
@@ -38,7 +38,7 @@ public class LottoSpiel {
 
     public void tippEinlesen() {
         Scanner sc = new Scanner(System.in);
-        tipp = new ArrayMenge();
+        tipp = new LottoMenge();
         System.out.println("Bitte 6 verschiedene Zahlen (1 bis 49) eingeben:");
         while(tipp.size() < 6) {
             int zahl = sc.nextInt();
@@ -53,14 +53,14 @@ public class LottoSpiel {
 
     public void bekanntGeben() {
         System.out.print("Gezogene Zahlen: ");
-        int[] zArray = ((ArrayMenge) ziehung).toSortedArray();
+        int[] zArray = ((LottoMenge) ziehung).toSortedArray();
         for (int z : zArray) {
             System.out.print(z + " ");
         }
         System.out.println();
 
         System.out.print("Ihr Tipp: ");
-        int[] tArray = ((ArrayMenge) tipp).toSortedArray();
+        int[] tArray = ((LottoMenge) tipp).toSortedArray();
         for (int t : tArray) {
             System.out.print(t + " ");
         }

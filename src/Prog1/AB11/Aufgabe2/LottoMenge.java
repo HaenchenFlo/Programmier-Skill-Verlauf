@@ -1,11 +1,11 @@
 package Prog1.AB11.Aufgabe2;
 
 
-public class ArrayMenge implements Menge {
+public class LottoMenge implements Menge {
     private int[] werte;
     private int anzahl;
 
-    public ArrayMenge() {
+    public LottoMenge() {
         werte = new int[6];
         anzahl = 0;
     }
@@ -53,7 +53,7 @@ public class ArrayMenge implements Menge {
 
     @Override
     public Menge copy() {
-        ArrayMenge copy = new ArrayMenge();
+        LottoMenge copy = new LottoMenge();
         for(int i = 0; i < werte.length; i++) {
             copy.insert(werte[i]);
         }
