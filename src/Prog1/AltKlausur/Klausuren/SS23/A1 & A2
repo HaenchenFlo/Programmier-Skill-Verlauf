@@ -1,0 +1,61 @@
+Im Anhang finden Sie den Code einer Klasse Funktion.
+Erstellen Sie eine Tracetabelle mit einer Spalte fur die Code-Zeilennummer und je einer Spalte
+f¨ur jede vorkommende Variable. Tragen Sie die Werte der Variablen bei Aufruf der Methode
+berechne(3, 5) ein.
+Geben Sie außerdem an, f¨ur welche Parameter die Funktionen f bzw g jeweils aufgerufen
+werden.
+
+1
+
+Zeile | a | b | erg | zw | b1 | b2 | Aufruf |
+ 11     3   5    .     .    .    .      .
+ 12-15  3   5    0     .  true   .      .
+ 16     3   5    0     .  true   .      .
+ 17     3   5    0     .    .   true    .
+ 18     3   5    0     .    .   true    .
+ 19     3   5    0     0             g(3,5-1)
+ 25     3   5    0     0    .     .     .
+ 26     6   5    0     0    .     .     .
+ 27     6   7    0     0    .     .     .
+ 28     6   7    0     0   true   .     .
+ 17     6   7    0     0    .   false   .
+ 22     6   7    0     15   .     .    f(6+7)
+ 23     6   6    0     15   .     .     .
+ 25     6   6    15    15   .     .     .
+ 26    12   6    15    15   .     .     .
+ 27    12   8    15    15   .     .     .
+ 28    12   8    15    15   false .     .
+ 30    12   8    15    15   false .   return 15
+
+ ===> 15
+
+ 2
+
+ Im Anhang finden Sie zwei Klassendefinitionen der Klassen A und B und eine main-Methode.
+ Erlautern Sie durch ein Speicherbild die Situation bei Ausfuhrung der main-Methode.
+ Was ist die Ausgabe des Programms?
+
+
+ (0 2 6)
+(s = 7)
+         (2)
+p --> (a = 3)(as = 2)
+                   ^
+q --> (b = 4) aa --> (a = 4)(as = 6)
+                   |
+r --> (b = 6) aa --|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
