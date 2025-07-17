@@ -1,0 +1,23 @@
+
+1.
+
+public class C implements A {
+    //Klasse
+}
+
+public class D extends C implents B {
+    // Klasse
+}
+
+
+2.
+
+Z kann nicht von mehreren Klassen Erben und verletzt damit die Vererbbarkeit
+
+3.
+
+
+public class K implements M , L {
+    // Klasse
+}
+
